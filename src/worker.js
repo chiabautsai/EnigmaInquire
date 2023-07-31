@@ -5,8 +5,12 @@ export default {
 	// The fetch handler is invoked when this worker receives a HTTP(S) request
 	// and should return a Response (optionally wrapped in a Promise)
 	async fetch(request, env, ctx) {
-		const url = new URL(request.url);
-		const { query, id, options={} } = await request.json();
+		try {
+			requestBody = await request.json();
+		} catch (error) {
+			return new Response("Invalid JSON payload", { status: 400 });
+		}
+		const { query, id, options={} } = requestBody;
 
 		// Create an instance of the ITunesSearch class
 		const itunes = new ITunesSearch();
