@@ -1,5 +1,5 @@
 {
-  "name": "EnigmaInquire",
+  "name": "enigmainquire",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,6 @@
     "start": "wrangler dev"
   },
   "devDependencies": {
-    "itty-router": "^3.0.12",
     "wrangler": "^3.0.0"
   }
 }
